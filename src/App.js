@@ -34,7 +34,7 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <p>
-            Generer une attestation de deplacement derogatoire.
+            Générer une attestation.
           </p>
           <button className="generate" onClick={_ => this.generate()}>Generer</button>
         </header>

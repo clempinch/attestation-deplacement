@@ -1,6 +1,6 @@
 {
-  "short_name": "Attestations de deplacement derogatoire facile",
-  "name": "Attestations de deplacement derogatoire facile",
+  "short_name": "Générateur d'attestations de déplacement dérogatoire",
+  "name": "Générateur d'attestations de déplacement dérogatoire",
   "icons": [
     {
       "src": "favicon.ico",
