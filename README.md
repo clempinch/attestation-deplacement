@@ -1,8 +1,10 @@
-# Generator of "Attestation de deplacement derogatoire"
+# Generator of "Attestation de déplacement dérogatoire"
 
-This webapp generates "attestation de deplacement derogatoire" with a simple button, one for each reason.
+This webapp generates "attestation de déplacement dérogatoire" with a simple button, one for each reason.
 
 User info is stored in the local storage of the browser.
+
+Back-end is only reponsible for file serving. No infomration is processed by the back-end.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
