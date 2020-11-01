@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
-import pdfBase from './certificate.pdf'
-import { generatePdf } from './pdf-util'
+import GenerationButton from './GenerationButton';
 
 // TODO: set this in local storage at webapp startup
 const settings = {
@@ -14,8 +13,6 @@ const settings = {
   zipcode: "75001"
 };
 
-// TODO: Modify using a radio button
-const reason = "sport_animaux";
 
 class App extends React.Component {
 
@@ -34,35 +31,17 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <p>
-            Générer une attestation.
+            Générer une attestation pour...
           </p>
-          <button className="generate" onClick={_ => this.generate()}>Generer</button>
+          <GenerationButton userSettings={settings} reason="sport_animaux" label="Se promener"></GenerationButton>
+          <GenerationButton userSettings={settings} reason="travail" label="Se rendre au travail"></GenerationButton>
+          <GenerationButton userSettings={settings} reason="achats" label="Faire des achats"></GenerationButton>
+          <GenerationButton userSettings={settings} reason="sante" label="Se rendre à un RDV médical"></GenerationButton>
         </header>
       </div>
     );
   }
 
-  async generate() {
-    const creationInstant = new Date()
-    const creationHour = creationInstant
-      .toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
-    const creationDate = creationInstant.toLocaleDateString('fr-FR').replace('_', '/');
-
-    const profile = { ...settings, datesortie: creationDate, heuresortie: creationHour };
-
-    const pdf = await generatePdf(profile, reason, pdfBase);
-
-    this.downloadBlob(pdf, `attestation-${creationInstant.toLocaleDateString('fr-CA')}_${creationHour.replace(':', '-')}.pdf`)
-  }
-
-  downloadBlob(blob, fileName) {
-    const link = document.createElement('a')
-    const url = URL.createObjectURL(blob)
-    link.href = url
-    link.download = fileName
-    document.body.appendChild(link)
-    link.click()
-  }
 }
 
-export default App;
+  export default App;
