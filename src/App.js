@@ -55,7 +55,6 @@ class App extends React.Component {
   }
 
   render() {
-    const settings = this.state.userSettings;
     return (
       <div className="App">
         {this.getFormOrGenerationButtons()}
