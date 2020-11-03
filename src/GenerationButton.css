@@ -6,18 +6,19 @@
     color: white;
     font-size: calc(4px + 2vmin);
     border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
+    border-left: none;
+    /* Prevent double borders */
     cursor: pointer;
     height: 10%;
     margin: 20px;
-  }
-  
-  .generate:hover {
+}
+
+.generate:hover {
     background: #0b7dda;
-  }
-  
-  .generate:disabled,
-  .generate[disabled]{
+}
+
+.generate:disabled,
+.generate[disabled] {
     background-color: #a0bcf7;
     cursor: not-allowed;
-  }
+}
