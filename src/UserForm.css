@@ -1,0 +1,66 @@
+.user-form {
+	max-width: 500px;
+	padding: 10px 20px;
+    margin: 10px auto;
+    font-size: calc(5px + 2vmin);
+    color: white;
+}
+.user-form fieldset{
+	border: none;
+}
+.user-form label {
+	display: block;
+	margin-bottom: 10px;
+}
+.user-form input[type="text"],
+.user-form input[type="date"],
+.user-form input[type="number"] {
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 10px;
+}
+.user-form input[type="text"]:focus,
+.user-form input[type="date"]:focus,
+.user-form input[type="number"]:focus {
+	background: #c1e6fc;
+}
+
+.user-form input[type="submit"],
+.user-form input[type="button"] {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #2196F3;
+    color: white;
+    font-size: calc(4px + 2vmin);
+    border: 1px solid grey;
+    border-left: none;
+    /* Prevent double borders */
+    cursor: pointer;
+    height: 10%;
+    margin-top: 20px;
+}
+
+.user-form input[type="submit"]:hover,
+.user-form input[type="button"]:hover {
+    background: #0b7dda;
+}
+
+.user-form input[type="submit"][disabled],
+.user-form input[type="button"][disabled],
+.user-form input[type="submit"]:disabled,
+.user-form input[type="button"]:disabled {
+    background-color: #a0bcf7;
+    cursor: not-allowed;
+}
