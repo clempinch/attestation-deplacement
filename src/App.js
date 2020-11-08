@@ -35,11 +35,17 @@ class App extends React.Component {
     });
   }
 
+  resetSettings = () => {
+    this.setState({
+      userSettingsLoaded: false
+    });
+  }
+
   getFormOrGenerationButtons() {
     if (!this.state.userSettingsLoaded)
       return (
         <header className="App-header">
-          <UserForm onSubmit={(s) => this.storeSettings(s)}></UserForm>
+          <UserForm initialSettings={this.state.userSettings} onSubmit={(s) => this.storeSettings(s)}></UserForm>
         </header>);
     else {
       const settings = this.state.userSettings;
@@ -50,6 +56,7 @@ class App extends React.Component {
           <GenerationButton userSettings={settings} reason="travail" label="Se rendre au travail"></GenerationButton>
           <GenerationButton userSettings={settings} reason="achats" label="Faire des achats"></GenerationButton>
           <GenerationButton userSettings={settings} reason="sante" label="Se rendre à un RDV médical"></GenerationButton>
+          <button className="Update-settings" onClick={() => this.resetSettings()}>Paramètres</button>
         </header>)
     }
   }

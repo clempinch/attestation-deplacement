@@ -13,3 +13,27 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.Update-settings {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: calc(2px + 1vmin);
+  border: 1px solid grey;
+  border-left: none;
+  /* Prevent double borders */
+  cursor: pointer;
+  height: 10%;
+  margin-top: 100px;
+}
+
+.Update-settings:hover {
+  background: #0b7dda;
+}
+
+.Update-settings:disabled,
+.Update-settings[disabled] {
+  background-color: #a0bcf7;
+  cursor: not-allowed;
+}

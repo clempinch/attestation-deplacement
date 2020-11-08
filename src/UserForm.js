@@ -5,14 +5,26 @@ class UserForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      firstname: "",
-      lastname: "",
-      birthday: "",
-      placeofbirth: "",
-      address: "",
-      city: "",
-      zipcode: ""
+    if (props.initialSettings) {
+      this.state = {
+        firstname: props.initialSettings.firstname,
+        lastname: props.initialSettings.lastname,
+        birthday: this.revertDate(props.initialSettings.birthday),
+        placeofbirth: props.initialSettings.placeofbirth,
+        address: props.initialSettings.address,
+        city: props.initialSettings.city,
+        zipcode: props.initialSettings.zipcode
+      }
+    } else {
+      this.state = {
+        firstname: "",
+        lastname: "",
+        birthday: "",
+        placeofbirth: "",
+        address: "",
+        city: "",
+        zipcode: ""
+      }
     }
   }
 
@@ -47,6 +59,13 @@ class UserForm extends React.Component {
     const dateRegex = /([^-]*)-([^-]*)-([^-]*)/;
     var dateRegexResult = date.match(dateRegex);
     return `${dateRegexResult[3]}/${dateRegexResult[2]}/${dateRegexResult[1]}`;
+  }
+
+  revertDate(date) {
+    // before: DD/MM/YYYY, after: YYYY-MM-DD
+    const dateRegex = /([^-]*)\/([^-]*)\/([^-]*)/;
+    var dateRegexResult = date.match(dateRegex);
+    return `${dateRegexResult[3]}-${dateRegexResult[2]}-${dateRegexResult[1]}`;
   }
 
   render() {
@@ -122,7 +141,7 @@ class UserForm extends React.Component {
               value={this.state.city}
               onChange={this.handleInputChange} />
           </label>
-          <input type="submit" value="Go" className="button" />
+          <input type="submit" value="Sauvegarder" className="button" />
         </fieldset>
       </form>
     );
