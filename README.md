@@ -23,8 +23,9 @@ See it live on: https://clempinch-attestation.netlify.app/
 
 TODO list:
 - add a user settings edition button
+- user can select button he/she is interested in
 - add a footer note about the technical stack
-- add a link to the Githug repo
+- add a link to the Github repo
 
 ## Available Scripts
 
