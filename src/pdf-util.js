@@ -4,10 +4,10 @@ import { PDFDocument, rgb, StandardFonts } from 'pdf-lib'
 const ys = {
   travail: 488,
   achats: 417,
-  sante: 347,
+  sante: 370,
   famille: 325,
   handicap: 291,
-  sport_animaux: 269,
+  sport_animaux: 295,
   convocation: 199,
   missions: 178,
   enfants: 157,
@@ -110,15 +110,6 @@ export async function generatePdf (profile, reasons, pdfBase) {
   const generatedQR = await generateQR(data)
 
   const qrImage = await pdfDoc.embedPng(generatedQR)
-
-  page1.drawText(qrTitle1 + '\n' + qrTitle2, { x: 415, y: 135, size: 9, font, lineHeight: 10, color: rgb(1, 1, 1) })
-
-  page1.drawImage(qrImage, {
-    x: page1.getWidth() - 156,
-    y: 25,
-    width: 92,
-    height: 92,
-  })
 
   pdfDoc.addPage()
   const page2 = pdfDoc.getPages()[1]
